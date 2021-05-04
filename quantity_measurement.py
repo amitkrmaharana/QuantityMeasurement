@@ -22,9 +22,7 @@ class QuantityMeasurement:
                     return True
                 else:
                     return False
-            elif quantity1 is None:
-                return None
-            elif quantity2 is None:
+            elif quantity1 is None or quantity2 is None:
                 return None
             return 0
         except Exception as e:
