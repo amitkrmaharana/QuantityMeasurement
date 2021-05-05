@@ -3,6 +3,9 @@ from logger import *
 
 class QuantityMeasurement:
 
+    logging.basicConfig(filename='quantity_measurement.log', format='%(asctime)s %(levelname)s %(name)s %(message)s')
+    logger = logging.getLogger(__name__)
+
     def compare_length(self, unit1, unit2, quantity1, quantity2):
         """
 
@@ -13,17 +16,15 @@ class QuantityMeasurement:
         :return: equality of the lengths if both are not null
         """
         try:
+            unit_dict = {"ft": 1, "in": 12}
             if quantity1 is not None and quantity2 is not None:
-                if unit1 == "ft":
-                    quantity1 *= 12
-                if unit2 == "ft":
-                    quantity2 *= 12
+                quantity1 /= unit_dict[unit1]
+                quantity2 /= unit_dict[unit2]
                 if quantity1 == quantity2:
                     return True
                 else:
                     return False
-            elif quantity1 is None or quantity2 is None:
+            else:
                 return None
-            return 0
         except Exception as e:
             logger.error(e)
