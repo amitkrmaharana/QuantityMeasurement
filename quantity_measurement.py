@@ -16,7 +16,7 @@ class QuantityMeasurement:
         :return: equality of the lengths if both are not null
         """
         try:
-            unit_dict = {"ft": 1, "in": 12}
+            unit_dict = {"ft": 3, "in": 36, "yd": 1}
             if quantity1 is not None and quantity2 is not None:
                 quantity1 /= unit_dict[unit1]
                 quantity2 /= unit_dict[unit2]
