@@ -25,6 +25,9 @@ class TestQuantityMeasurement(unittest.TestCase):
     def test_lengths_given_0_ft_and_0_in_should_compare_and_return_true(self):
         self.assertTrue(QuantityMeasurement().compare_length("ft", "in", 0, 0))
 
+    def test_lengths_given_1_ft_and_1_in_should_compare_and_return_false(self):
+        self.assertFalse(QuantityMeasurement().compare_length("ft", "in", 1, 1))
+
 
 if __name__ == '__main__':
     unittest.main()
