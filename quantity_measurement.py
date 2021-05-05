@@ -3,9 +3,6 @@ from logger import *
 
 class QuantityMeasurement:
 
-    logging.basicConfig(filename='quantity_measurement.log', format='%(asctime)s %(levelname)s %(name)s %(message)s')
-    logger = logging.getLogger(__name__)
-
     def compare_length(self, unit1, unit2, quantity1, quantity2):
         """
 
